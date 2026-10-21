@@ -21,7 +21,9 @@ def prepare_features(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     features = frame.drop(columns=[LABEL]).copy()
     for column in CAT_FEATURES:
         if column not in features.columns:
-            raise ValueError(f"После препроцессинга нет категориального признака {column}")
+            raise ValueError(
+                f"После препроцессинга нет категориального признака {column}"
+            )
         features[column] = features[column].astype(str)
     return features, frame[LABEL]
 

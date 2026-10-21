@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>DQ Report</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; margin: 24px; }
+    h1 { color: #222; }
+    table { border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #f3f3f3; }
+    .pass { color: #0a7d28; font-weight: bold; }
+    .fail { color: #b71c1c; font-weight: bold; }
+    .summary { font-size: 1.1em; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Data Quality Report</h1>
+  <p>Витрина: <code>labeled_transactions</code>. Всего строк: <b>1986431</b>.</p>
+  <table>
+    <tr><th>#</th><th>Правило</th><th>Статус</th></tr>
+    
+    <tr>
+      <td>1</td>
+      <td>merch не пустой</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>cat_id не пустой</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>amount в диапазоне [0, 1_000_000]</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>target (fraud_flag) только 0 или 1</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>в витрине не менее 50 000 строк</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>нет пропусков в координатах клиента (lat, lon)</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>transaction_time не в будущем</td>
+      <td class="pass">
+        PASS
+      </td>
+    </tr>
+    
+  </table>
+  <p class="summary">
+    Итог: 7 / 7 правил пройдено.
+  </p>
+</body>
+</html>
